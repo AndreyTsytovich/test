@@ -1,0 +1,23 @@
+1. curl http://37.59.228.229:3000/api/users
+
+Выводит список юзеров
+
+2. curl -v -X POST -H "Content-Type: application/json" http://37.59.228.229:3000/api/users
+
+Создает "не определенного" Юзера "Unindefined"
+
+3. curl -v -X POST -H "Content-Type: application/json" -d "{\"name\":\"vovka\",\"phone\":\"111\",\"role\":\"Student\"}" http://37.59.228.229:3000/api/users
+
+Создаент конкретного  Юзера "vovka" ID 347
+
+4. curl -v -X PUT -H "Content-Type: application/json" -d "{\"id\":347,\"name\":\"vovka-markovka\",\"phone\":\"3333444\",\"role\":\"Student\"}" http://37.59.228.229:3000/api/users
+
+Изменяет Юзера ID 347 c "vovka" на "vovka-markovka"
+
+5. curl -v -X DELETE -H "Content-Type: application/json" -d "" http://37.59.228.229:3000/api/users/341
+
+Удаляет конкретного Юзера с ID 341
+
+6. curl -v -X DELETE -H "Content-Type: application/json" -d "" http://37.59.228.229:3000/api/users
+
+Удаляет последнего Юзера в списке
