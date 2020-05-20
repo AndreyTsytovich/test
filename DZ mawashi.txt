@@ -1,0 +1,193 @@
+	C:\Users\Администратор>curl -v -X POST -d "{\"account\": \"Andrey123456\", \"username\": \"andrey123@test.test\", \"password\": \"665544\"}" -H "Content-Type: application/json" http://development.mawashi.tools:8080/api/rest/v1.0/auth/signup
+
+Note: Unnecessary use of -X or --request, POST is already inferred.
+*   Trying 193.111.62.147:8080...
+* Connected to development.mawashi.tools (193.111.62.147) port 8080 (#0)
+> POST /api/rest/v1.0/auth/signup HTTP/1.1
+> Host: development.mawashi.tools:8080
+> User-Agent: curl/7.69.1
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 84
+>
+* upload completely sent off: 84 out of 84 bytes
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 201
+< Vary: Origin
+< Vary: Access-Control-Request-Method
+< Vary: Access-Control-Request-Headers
+< Location: http://development.mawashi.tools:8080/api/rest/v1.0/users/
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+< Pragma: no-cache
+< Expires: 0
+< X-Frame-Options: DENY
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Thu, 23 Apr 2020 04:48:16 GMT
+<
+{"success":true,"error":null,"data":{"name":null,"account":{"name":"Andrey123456"},"username":"andrey123@test.test"}}* Connection #0 to host development.mawashi.tools left intact
+
+
+
+C:\Users\Администратор>curl -v -X POST -d "{\"account\": \"Andrey123456\", \"username\": \"andrey123@test.test\", \"password\": \"665544\"}" -H "Content-Type: application/json" http://development.mawashi.tools:8080/api/rest/v1.0/auth/signin
+
+
+Note: Unnecessary use of -X or --request, POST is already inferred.
+*   Trying 193.111.62.147:8080...
+* Connected to development.mawashi.tools (193.111.62.147) port 8080 (#0)
+> POST /api/rest/v1.0/auth/signin HTTP/1.1
+> Host: development.mawashi.tools:8080
+> User-Agent: curl/7.69.1
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 84
+>
+* upload completely sent off: 84 out of 84 bytes
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200
+< Vary: Origin
+< Vary: Access-Control-Request-Method
+< Vary: Access-Control-Request-Headers
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+< Pragma: no-cache
+< Expires: 0
+< X-Frame-Options: DENY
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Thu, 23 Apr 2020 04:52:10 GMT
+<
+{"success":true,"error":null,"data":{"accessToken":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1MyIsImlhdCI6MTU4NzYxNzUzMCwiZXhwIjoxNTg4MjIyMzMwfQ.aC8EZWdpNhtgMGz4rs0w9ymBJBvMcZlncf_gBdt5KvQEmza6ADNhobWoL--IrRTVae_pRbQY1knGkFGPxsFBiw","tokenType":"Bearer"}}* Connection #0 to host development.mawashi.tools left intact
+
+
+
+
+	C:\Users\Администратор>curl -v -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1MyIsImlhdCI6MTU4NzYxNzUzMCwiZXhwIjoxNTg4MjIyMzMwfQ.aC8EZWdpNhtgMGz4rs0w9ymBJBvMcZlncf_gBdt5KvQEmza6ADNhobWoL--IrRTVae_pRbQY1knGkFGPxsFBiw" http://development.mawashi.tools:8080/api/rest/v1.0/
+
+*   Trying 193.111.62.147:8080...
+* Connected to development.mawashi.tools (193.111.62.147) port 8080 (#0)
+> GET /api/rest/v1.0/ HTTP/1.1
+> Host: development.mawashi.tools:8080
+> User-Agent: curl/7.69.1
+> Accept: */*
+> Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1MyIsImlhdCI6MTU4NzYxNzUzMCwiZXhwIjoxNTg4MjIyMzMwfQ.aC8EZWdpNhtgMGz4rs0w9ymBJBvMcZlncf_gBdt5KvQEmza6ADNhobWoL--IrRTVae_pRbQY1knGkFGPxsFBiw
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200
+< Vary: Origin
+< Vary: Access-Control-Request-Method
+< Vary: Access-Control-Request-Headers
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+< Pragma: no-cache
+< Expires: 0
+< X-Frame-Options: DENY
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Thu, 23 Apr 2020 05:11:46 GMT
+<
+{"success":true,"error":null,"data":[{"key":"POST","value":"/auth/signup"},{"key":"POST","value":"/auth/signin"},{"key":"GET","value":"/app/projects"},{"key":"POST","value":"/app/projects"},{"key":"GET","value":"/"},{"key":"GET","value":"/test"},{"key":"GET","value":"/admin/accounts"}]}* Connection #0 to host development.mawashi.tools left intact
+
+
+	C:\Users\Администратор>curl -v -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1MyIsImlhdCI6MTU4NzYxNzUzMCwiZXhwIjoxNTg4MjIyMzMwfQ.aC8EZWdpNhtgMGz4rs0w9ymBJBvMcZlncf_gBdt5KvQEmza6ADNhobWoL--IrRTVae_pRbQY1knGkFGPxsFBiw" http://development.mawashi.tools:8080/api/rest/v1.0/app/projects
+*   Trying 193.111.62.147:8080...
+* Connected to development.mawashi.tools (193.111.62.147) port 8080 (#0)
+> GET /api/rest/v1.0/app/projects HTTP/1.1
+> Host: development.mawashi.tools:8080
+> User-Agent: curl/7.69.1
+> Accept: */*
+> Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1MyIsImlhdCI6MTU4NzYxNzUzMCwiZXhwIjoxNTg4MjIyMzMwfQ.aC8EZWdpNhtgMGz4rs0w9ymBJBvMcZlncf_gBdt5KvQEmza6ADNhobWoL--IrRTVae_pRbQY1knGkFGPxsFBiw
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200
+< Vary: Origin
+< Vary: Access-Control-Request-Method
+< Vary: Access-Control-Request-Headers
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+< Pragma: no-cache
+< Expires: 0
+< X-Frame-Options: DENY
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Thu, 23 Apr 2020 06:04:13 GMT
+<
+{"success":true,"error":null,"data":{"content":[17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1],"page":0,"size":20,"totalElements":17,"totalPages":1,"last":true}}* Connection #0 to host development.mawashi.tools left intact
+
+
+
+	C:\Users\Администратор>curl -v -X POST -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1MyIsImlhdCI6MTU4NzYxNzUzMCwiZXhwIjoxNTg4MjIyMzMwfQ.aC8EZWdpNhtgMGz4rs0w9ymBJBvMcZlncf_gBdt5KvQEmza6ADNhobWoL--IrRTVae_pRbQY1knGkFGPxsFBiw" -H "Content-Type: application/json" -d "{\"name\": \"Andrey123\"}" http://development.mawashi.tools:8080/api/rest/v1.0/app/projects
+
+Note: Unnecessary use of -X or --request, POST is already inferred.
+*   Trying 193.111.62.147:8080...
+* Connected to development.mawashi.tools (193.111.62.147) port 8080 (#0)
+> POST /api/rest/v1.0/app/projects HTTP/1.1
+> Host: development.mawashi.tools:8080
+> User-Agent: curl/7.69.1
+> Accept: */*
+> Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1MyIsImlhdCI6MTU4NzYxNzUzMCwiZXhwIjoxNTg4MjIyMzMwfQ.aC8EZWdpNhtgMGz4rs0w9ymBJBvMcZlncf_gBdt5KvQEmza6ADNhobWoL--IrRTVae_pRbQY1knGkFGPxsFBiw
+> Content-Type: application/json
+> Content-Length: 21
+>
+* upload completely sent off: 21 out of 21 bytes
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 201
+< Vary: Origin
+< Vary: Access-Control-Request-Method
+< Vary: Access-Control-Request-Headers
+< Location: http://development.mawashi.tools:8080/api/rest/v1.0/app/projects/18
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+< Pragma: no-cache
+< Expires: 0
+< X-Frame-Options: DENY
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Thu, 23 Apr 2020 06:14:31 GMT
+<
+{"success":true,"error":null,"data":{"updatedAt":{"nano":365000000,"epochSecond":1587622471},"createdBy":53,"updatedBy":53,"id":18,"name":"Andrey123","description":null,"account":{"name":"Andrey123456"}}}* Connection #0 to host development.mawashi.tools left intact
+
+
+
+	C:\Users\Администратор>curl -v POST -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1MyIsImlhdCI6MTU4NzYxNzUzMCwiZXhwIjoxNTg4MjIyMzMwfQ.aC8EZWdpNhtgMGz4rs0w9ymBJBvMcZlncf_gBdt5KvQEmza6ADNhobWoL--IrRTVae_pRbQY1knGkFGPxsFBiw" -H "Content-Type: application/json" -d "{\"name\": \"petrushka\"}" http://development.mawashi.tools:8080/api/rest/v1.0/app/projects
+* Could not resolve host: POST
+* Closing connection 0
+curl: (6) Could not resolve host: POST
+*   Trying 193.111.62.147:8080...
+* Connected to development.mawashi.tools (193.111.62.147) port 8080 (#1)
+> POST /api/rest/v1.0/app/projects HTTP/1.1
+> Host: development.mawashi.tools:8080
+> User-Agent: curl/7.69.1
+> Accept: */*
+> Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI1MyIsImlhdCI6MTU4NzYxNzUzMCwiZXhwIjoxNTg4MjIyMzMwfQ.aC8EZWdpNhtgMGz4rs0w9ymBJBvMcZlncf_gBdt5KvQEmza6ADNhobWoL--IrRTVae_pRbQY1knGkFGPxsFBiw
+> Content-Type: application/json
+> Content-Length: 21
+>
+* upload completely sent off: 21 out of 21 bytes
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 201
+< Vary: Origin
+< Vary: Access-Control-Request-Method
+< Vary: Access-Control-Request-Headers
+< Location: http://development.mawashi.tools:8080/api/rest/v1.0/app/projects/20
+< X-Content-Type-Options: nosniff
+< X-XSS-Protection: 1; mode=block
+< Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+< Pragma: no-cache
+< Expires: 0
+< X-Frame-Options: DENY
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Thu, 23 Apr 2020 06:27:30 GMT
+<
+{"success":true,"error":null,"data":{"updatedAt":{"nano":850000000,"epochSecond":1587623250},"createdBy":53,"updatedBy":53,"id":20,"name":"petrushka","description":null,"account":{"name":"Andrey123456"}}}* Connection #1 to host development.mawashi.tools left intact
+
+
+
+
